@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.example.book-app' is invalid and this project uses 'com.example.book_app' instead.
+* The original package name 'com.example.book-app' is invalid and this project uses 'com.example.bookapp' instead.
 
 # Getting Started
 
