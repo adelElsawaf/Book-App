@@ -1,7 +1,7 @@
 package com.example.bookapp.book;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDate;
 

@@ -1,5 +1,7 @@
 package com.example.bookapp.book;
 
+
+import static com.example.bookapp.shared.Constants.logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +27,11 @@ public class BookController {
      */
     @PostMapping
     public ResponseEntity<BookEntity> createBook(@RequestBody BookEntity book) {
-        return new ResponseEntity<>(bookService.createBook(book), HttpStatus.CREATED);
+       logger.info("invoke createBook method for book: {}" ,book);
+       BookEntity createdBook = bookService.createBook(book);
+       logger.info("Finish createBook method with response: {}" ,createdBook.toString());
+       return ResponseEntity.status(HttpStatus.OK).body(createdBook);
+
+
     }
 }
