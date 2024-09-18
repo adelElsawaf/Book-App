@@ -13,18 +13,19 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "books")
 @Data
+@Builder
 public class BookEntity {
     @Column(name = "bookId")
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @NotBlank
+
     private String title;
-    @NotBlank
+
     private String authorName;
-    @NotBlank
+
     private String ISBN;
-    @NotNull
+
     private LocalDate publishDate;
 
 }

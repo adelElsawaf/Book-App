@@ -2,6 +2,9 @@ package com.example.bookapp.book;
 
 
 import static com.example.bookapp.shared.Constants.logger;
+
+import com.example.bookapp.book.response.Book;
+import com.example.bookapp.book.request.CreateBookRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,11 +31,11 @@ public class BookController {
      * @return the response entity with created book
      */
     @PostMapping
-    public ResponseEntity<BookEntity> createBook(@RequestBody BookEntity book) {
+    public ResponseEntity<Book> createBook(@RequestBody CreateBookRequest book) {
        logger.info("invoke createBook method for book: {}" ,book);
-       BookEntity createdBook = bookService.createBook(book);
-       logger.info("Finish createBook method with response: {}" ,createdBook.toString());
-       return ResponseEntity.status(HttpStatus.OK).body(createdBook);
+       Book bookResponse = bookService.createBook(book);
+       logger.info("Finish createBook method with response: {}" ,bookResponse.toString());
+       return ResponseEntity.status(HttpStatus.OK).body(bookResponse);
 
 
     }
